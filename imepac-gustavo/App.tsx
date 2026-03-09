@@ -7,7 +7,6 @@ import Cadastro from './src/pages/cadastro';
 import EsqueciSenha from './src/pages/esqueci-senha';
 
 export default function App() {
-  // Estado para controlar a navegação: 'login', 'cadastro' ou 'esqueci-senha'
   const [telaAtual, setTelaAtual] = useState('login');
 
   return (

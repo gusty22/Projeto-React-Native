@@ -1,23 +1,38 @@
-import React from "react";
-import { 
-    View, 
-    Text, 
-    Image, 
-    TextInput, 
-    TouchableOpacity, 
-    KeyboardAvoidingView, 
+import React, { useState } from "react";
+import {
+    View,
+    Text,
+    Image,
+    TextInput,
+    TouchableOpacity,
+    KeyboardAvoidingView,
     Platform,
     TouchableWithoutFeedback,
     Keyboard,
-    ScrollView 
+    Alert
 } from 'react-native';
+
+import { MaterialIcons } from '@expo/vector-icons';
 import { style } from './styles';
-import Logo from '../../assets/icons8-login-96.png'; 
+import Logo from '../../assets/icons8-login-96.png';
 
 export default function Cadastro({ onNavigate }: any) {
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+
+    const handleCadastro = () => {
+        if (!nome || !email || !senha) {
+            Alert.alert("Erro no Cadastro", "Todos os campos são obrigatórios!");
+            return;
+        }
+
+        Alert.alert("Cadastro realizado", `Usuário ${nome} cadastrado com sucesso!`);
+    };
+
     return (
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <KeyboardAvoidingView 
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+            <KeyboardAvoidingView
                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
                 style={style.container}
             >
@@ -28,30 +43,45 @@ export default function Cadastro({ onNavigate }: any) {
 
                 <View style={style.boxMid}>
                     <Text style={style.labelInput}>Nome Completo</Text>
-                    <TextInput 
-                        style={style.boxInput} 
-                        placeholder="Digite seu nome"
-                        placeholderTextColor="#A0AEC0"
-                    />
+                    <View style={style.boxInputContainer}>
+                        <TextInput
+                            style={style.input}
+                            value={nome}
+                            onChangeText={setNome}
+                            placeholder="Digite seu nome"
+                            placeholderTextColor="#A0AEC0"
+                        />
+                        <MaterialIcons name="person" size={20} color="#A0AEC0" />
+                    </View>
 
                     <Text style={style.labelInput}>E-mail</Text>
-                    <TextInput 
-                        style={style.boxInput} 
-                        placeholder="exemplo@email.com"
-                        placeholderTextColor="#A0AEC0"
-                        keyboardType="email-address"
-                        autoCapitalize="none"
-                    />
+                    <View style={style.boxInputContainer}>
+                        <TextInput
+                            style={style.input}
+                            value={email}
+                            onChangeText={setEmail}
+                            placeholder="exemplo@email.com"
+                            placeholderTextColor="#A0AEC0"
+                            keyboardType="email-address"
+                            autoCapitalize="none"
+                        />
+                        <MaterialIcons name="email" size={20} color="#A0AEC0" />
+                    </View>
 
                     <Text style={style.labelInput}>Senha</Text>
-                    <TextInput 
-                        style={style.boxInput} 
-                        placeholder="Crie uma senha forte"
-                        placeholderTextColor="#A0AEC0"
-                        secureTextEntry
-                    />
+                    <View style={style.boxInputContainer}>
+                        <TextInput
+                            style={style.input}
+                            value={senha}
+                            onChangeText={setSenha}
+                            placeholder="Crie uma senha forte"
+                            placeholderTextColor="#A0AEC0"
+                            secureTextEntry
+                        />
+                        <MaterialIcons name="lock" size={20} color="#A0AEC0" />
+                    </View>
 
-                    <TouchableOpacity style={style.button} activeOpacity={0.8}>
+                    <TouchableOpacity style={style.button} activeOpacity={0.8} onPress={handleCadastro}>
                         <Text style={style.buttonText}>Cadastrar</Text>
                     </TouchableOpacity>
                 </View>

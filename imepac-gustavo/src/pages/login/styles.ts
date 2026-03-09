@@ -1,5 +1,5 @@
 import { Dimensions, StyleSheet } from "react-native";
-import { themes } from "../../global/themes"; //
+import { themes } from "../../global/themes";
 
 const { height } = Dimensions.get("window");
 
@@ -39,19 +39,18 @@ export const style = StyleSheet.create({
         marginLeft: 15,
         fontWeight: '600',
     },
-    // ATUALIZAÇÃO IMPORTANTE: Estilo do input para suportar ícones
-    boxInput: {
+    boxInputContainer: {
         width: '100%',
         height: 55,
         backgroundColor: themes.colors.secondary,
         borderRadius: 30,
         paddingHorizontal: 15,
         marginBottom: 20,
-        flexDirection: 'row',     // Coloca ícone e texto lado a lado
-        alignItems: 'center',     // Centraliza verticalmente
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between', // Garante o texto de um lado e o ícone do outro
         borderWidth: 1,
         borderColor: themes.colors.lightGray,
-        // Sombras
         elevation: 2,
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
@@ -60,9 +59,8 @@ export const style = StyleSheet.create({
     },
     input: {
         height: '100%',
-        width: '90%',             // Ocupa o espaço restante ao lado do ícone
-        borderRadius: 30,
-        paddingLeft: 10,          // Espaço entre o ícone e o texto
+        width: '85%',
+        paddingLeft: 10,
         color: themes.colors.text,
     },
     forgotPasswordContainer: {
@@ -78,7 +76,7 @@ export const style = StyleSheet.create({
     button: {
         width: '100%',
         height: 55,
-        backgroundColor: themes.colors.primary, // Usando a cor do tema
+        backgroundColor: themes.colors.primary,
         borderRadius: 30,
         alignItems: 'center',
         justifyContent: 'center',

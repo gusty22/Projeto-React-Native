@@ -10,7 +10,7 @@ export const style = StyleSheet.create({
         justifyContent: 'center',
     },
     boxTop: {
-        height: height * 0.25, // Um pouco menor para caber mais campos
+        height: height * 0.25,
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
@@ -38,18 +38,25 @@ export const style = StyleSheet.create({
         marginLeft: 15,
         fontWeight: '600',
     },
-    boxInput: {
+    boxInputContainer: {
         width: '100%',
         height: 50,
         backgroundColor: '#FFFFFF',
         borderRadius: 30,
         paddingHorizontal: 20,
         marginBottom: 15,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between', // Mantém o texto na esquerda e o ícone na direita
         elevation: 2,
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.05,
         shadowRadius: 3,
+    },
+    input: {
+        height: '100%',
+        width: '85%', // Deixa espaço para o ícone
         color: '#2D3748',
     },
     button: {

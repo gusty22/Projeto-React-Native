@@ -40,18 +40,25 @@ export const style = StyleSheet.create({
         marginLeft: 15,
         fontWeight: '600',
     },
-    boxInput: {
+    boxInputContainer: {
         width: '100%',
         height: 55,
         backgroundColor: '#FFFFFF',
         borderRadius: 30,
         paddingHorizontal: 20,
         marginBottom: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
         elevation: 2,
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.05,
         shadowRadius: 3,
+    },
+    input: {
+        height: '100%',
+        width: '85%',
         color: '#2D3748',
     },
     button: {
