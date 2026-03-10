@@ -44,10 +44,10 @@ export const style = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         borderRadius: 30,
         paddingHorizontal: 20,
-        marginBottom: 15,
+        marginBottom: 10,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between', // Mantém o texto na esquerda e o ícone na direita
+        justifyContent: 'space-between',
         elevation: 2,
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
@@ -56,8 +56,15 @@ export const style = StyleSheet.create({
     },
     input: {
         height: '100%',
-        width: '85%', // Deixa espaço para o ícone
+        width: '85%',
         color: '#2D3748',
+    },
+    textError: {
+        color: '#E53E3E',
+        fontSize: 12,
+        marginLeft: 15,
+        marginBottom: 15,
+        fontWeight: '500'
     },
     button: {
         width: '100%',

@@ -45,17 +45,13 @@ export const style = StyleSheet.create({
         backgroundColor: themes.colors.secondary,
         borderRadius: 30,
         paddingHorizontal: 15,
-        marginBottom: 20,
+        marginBottom: 10,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between', // Garante o texto de um lado e o ícone do outro
+        justifyContent: 'space-between',
         borderWidth: 1,
         borderColor: themes.colors.lightGray,
         elevation: 2,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.05,
-        shadowRadius: 3,
     },
     input: {
         height: '100%',
@@ -63,15 +59,12 @@ export const style = StyleSheet.create({
         paddingLeft: 10,
         color: themes.colors.text,
     },
-    forgotPasswordContainer: {
-        alignSelf: 'flex-end',
-        marginRight: 10,
-        marginBottom: 25,
-    },
-    forgotPasswordText: {
-        color: themes.colors.primary,
-        fontSize: 14,
-        fontWeight: '500',
+    textError: {
+        color: '#E53E3E',
+        fontSize: 12,
+        marginLeft: 15,
+        marginBottom: 15,
+        fontWeight: '500'
     },
     button: {
         width: '100%',
@@ -81,10 +74,6 @@ export const style = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         elevation: 4,
-        shadowColor: themes.colors.primary,
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.3,
-        shadowRadius: 4,
     },
     buttonText: {
         color: themes.colors.secondary,

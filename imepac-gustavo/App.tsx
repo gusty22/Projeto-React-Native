@@ -1,36 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-import Login from './src/pages/login';
-import Cadastro from './src/pages/cadastro';
-import EsqueciSenha from './src/pages/esqueci-senha';
+import AppNavigation from './src/pages/AppNavigation';
 
 export default function App() {
-  const [telaAtual, setTelaAtual] = useState('login');
-
-  return (
-    <View style={styles.container}>
-      <StatusBar style="dark" />
-      
-      {telaAtual === 'login' && (
-        <Login onNavigate={setTelaAtual} />
-      )}
-
-      {telaAtual === 'cadastro' && (
-        <Cadastro onNavigate={setTelaAtual} />
-      )}
-
-      {telaAtual === 'esqueci-senha' && (
-        <EsqueciSenha onNavigate={setTelaAtual} />
-      )}
-    </View>
-  );
+    return (
+        <GestureHandlerRootView style={styles.container}>
+            <StatusBar style="dark" />
+            <AppNavigation />
+        </GestureHandlerRootView>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F0F4F8',
-  },
+    container: {
+        flex: 1,
+        backgroundColor: '#F0F4F8',
+    },
 });
