@@ -125,4 +125,9 @@ npm install
 ```
 
 ---
+# 📂 Como Clonar o Projeto
 
+Para clonar **apenas a branch `sistema-completo`**, use o seguinte comando:
+
+```bash
+  git clone --branch sistema-completo --single-branch https://github.com/gusty22/Projeto-React-Native.git
