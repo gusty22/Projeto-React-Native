@@ -2,19 +2,40 @@ import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
     menuContainer: {
-        flexDirection: "row",
-        justifyContent: "space-around",
-        backgroundColor: "#ddd",
+        backgroundColor: "#FFFFFF",
         paddingVertical: 15,
-        paddingHorizontal: 10,
         borderBottomWidth: 1,
-        borderBottomColor: "#aaa",
+        borderBottomColor: "#E2E8F0",
         width: '100%',
-        marginTop: 40, // Espaço para não ficar colado na barra de status do celular
+        marginTop: 40,
+        elevation: 3,
+    },
+    scrollContainer: {
+        paddingHorizontal: 10,
+        alignItems: 'center',
+    },
+    btn: {
+        marginHorizontal: 10,
+        paddingVertical: 8,
+        paddingHorizontal: 12,
+        backgroundColor: '#F7FAFC',
+        borderRadius: 8,
+    },
+    btnSair: {
+        marginHorizontal: 10,
+        paddingVertical: 8,
+        paddingHorizontal: 12,
+        backgroundColor: '#FED7D7',
+        borderRadius: 8,
     },
     menuItem: {
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: "bold",
-        color: '#333',
+        color: '#2D3748',
+    },
+    menuItemSair: {
+        fontSize: 14,
+        fontWeight: "bold",
+        color: '#C53030',
     }
 });

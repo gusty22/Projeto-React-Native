@@ -31,15 +31,18 @@ npm install
 Para garantir que o sistema de navegação funcione corretamente:
 
 ```bash
-npm install @react-navigation/native @react-navigation/native-stack
+  npm install @react-navigation/native @react-navigation/native-stack
 ```
 
 Instale também as dependências nativas utilizadas pelo Expo:
 
 ```bash
-npx expo install react-native-screens react-native-safe-area-context react-native-gesture-handler
+  npx expo install react-native-screens react-native-safe-area-context react-native-gesture-handler
 ```
-
+'
+```bash
+  npx expo install @react-native-async-storage/async-storage
+```
 ---
 
 ## 3. Dependências para Web
