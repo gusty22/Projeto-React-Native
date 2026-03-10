@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Platform, KeyboardAvoidingView, ScrollView, TouchableWithoutFeedback, Keyboard, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert, Platform, KeyboardAvoidingView, ScrollView, TouchableWithoutFeedback, Keyboard, ActivityIndicator } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../AppNavigation';
 import { usePaciente } from '../../contexts/PacienteContext';
 import { maskCEP, maskPhone } from '../../utils/masks';
+import { styles } from './styles';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'PacienteForm'>;
 
@@ -18,7 +19,7 @@ export default function PacienteForm({ navigation, route }: Props) {
     const [telefone, setTelefone] = useState('');
     const [cep, setCep] = useState('');
     const [rua, setRua] = useState('');
-    const [numero, setNumero] = useState(''); // Estado para o Número da casa/apto
+    const [numero, setNumero] = useState('');
     const [bairro, setBairro] = useState('');
     const [cidade, setCidade] = useState('');
 
@@ -34,7 +35,7 @@ export default function PacienteForm({ navigation, route }: Props) {
                 setTelefone(pacienteAtual.telefone);
                 setCep(pacienteAtual.cep);
                 setRua(pacienteAtual.rua);
-                setNumero(pacienteAtual.numero || ''); // Carrega o número caso exista
+                setNumero(pacienteAtual.numero || '');
                 setBairro(pacienteAtual.bairro);
                 setCidade(pacienteAtual.cidade);
             }
@@ -66,7 +67,7 @@ export default function PacienteForm({ navigation, route }: Props) {
                     setErros({ ...erros, cep: '' });
                 }
             } catch (error) {
-                setErros({ ...erros, cep: 'Erro ao buscar o CEP na internet.' });
+                setErros({ ...erros, cep: 'Erro ao buscar o CEP.' });
             } finally {
                 setBuscandoCep(false);
             }
@@ -89,7 +90,7 @@ export default function PacienteForm({ navigation, route }: Props) {
             novosErros.email = "E-mail é obrigatório.";
             temErro = true;
         } else if (!validarEmail(email)) {
-            novosErros.email = "Digite um e-mail válido (ex: abc@def.com).";
+            novosErros.email = "Digite um e-mail válido.";
             temErro = true;
         }
 
@@ -224,17 +225,3 @@ export default function PacienteForm({ navigation, route }: Props) {
         </KeyboardAvoidingView>
     );
 }
-
-const styles = StyleSheet.create({
-    container: { flex: 1, padding: 20, paddingTop: 50 },
-    header: { flexDirection: 'row', alignItems: 'center', marginBottom: 20 },
-    btnVoltar: { marginRight: 15, padding: 5 },
-    title: { fontSize: 24, fontWeight: 'bold', color: '#2D3748' },
-    form: { width: '100%', backgroundColor: '#FFF', padding: 20, borderRadius: 10, elevation: 2 },
-    label: { fontSize: 14, fontWeight: 'bold', color: '#4A5568', marginBottom: 5, marginLeft: 5 },
-    input: { height: 45, borderWidth: 1, borderColor: '#E2E8F0', borderRadius: 8, paddingHorizontal: 15, marginBottom: 5, color: '#2D3748', backgroundColor: '#F7FAFC' },
-    cepContainer: { flexDirection: 'row', alignItems: 'center' },
-    textError: { color: '#E53E3E', fontSize: 12, marginLeft: 5, marginBottom: 10, fontWeight: '500' },
-    button: { backgroundColor: '#3182CE', height: 50, borderRadius: 8, justifyContent: 'center', alignItems: 'center', marginTop: 15, elevation: 3 },
-    buttonText: { color: '#FFF', fontWeight: 'bold', fontSize: 16 }
-});

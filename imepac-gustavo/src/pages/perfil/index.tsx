@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, Platform, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert, Platform, ScrollView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import Menu from '../../components/menu/Menu';
 import { usePaciente } from '../../contexts/PacienteContext';
 import { maskPhone } from '../../utils/masks';
+import { styles } from './styles';
 
 export default function Perfil() {
     const { perfil, salvarPerfil, apagarPerfil, limparTodosDados } = usePaciente();
@@ -72,5 +73,3 @@ export default function Perfil() {
         </View>
     );
 }
-
-const styles = StyleSheet.create({ container: { flex: 1, backgroundColor: '#F0F4F8' }, content: { padding: 20, alignItems: 'center' }, avatarPlaceholder: { width: 100, height: 100, backgroundColor: '#3182CE', borderRadius: 50, justifyContent: 'center', alignItems: 'center', marginBottom: 20 }, avatarText: { fontSize: 36, color: '#FFF', fontWeight: 'bold' }, form: { width: '100%', backgroundColor: '#FFF', padding: 20, borderRadius: 10, elevation: 2 }, label: { fontSize: 14, fontWeight: 'bold', color: '#4A5568', marginBottom: 5 }, input: { height: 45, borderWidth: 1, borderColor: '#E2E8F0', borderRadius: 8, paddingHorizontal: 15, marginBottom: 15, color: '#2D3748', backgroundColor: '#F7FAFC' }, button: { backgroundColor: '#3182CE', height: 50, borderRadius: 8, justifyContent: 'center', alignItems: 'center', elevation: 2 }, buttonText: { color: '#FFF', fontWeight: 'bold', fontSize: 16 }, btnDanger: { flexDirection: 'row', backgroundColor: '#C53030', width: '100%', padding: 15, borderRadius: 8, justifyContent: 'center', alignItems: 'center', marginTop: 30 }, btnDangerText: { color: '#FFF', fontWeight: 'bold', fontSize: 16 } });

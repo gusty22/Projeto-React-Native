@@ -1,11 +1,13 @@
+// cadastro/styles.js
 import { Dimensions, StyleSheet } from "react-native";
+import { themes } from "../../global/themes";
 
 const { height } = Dimensions.get("window");
 
 export const style = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F0F4F8',
+        backgroundColor: themes.colors.bgScreen,
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -20,11 +22,13 @@ export const style = StyleSheet.create({
         width: 80,
         height: 80,
         marginBottom: 10,
+        tintColor: themes.colors.primary,
     },
     title: {
-        fontSize: 24,
+        fontSize: 28,
         fontWeight: 'bold',
-        color: '#2D3748',
+        color: themes.colors.text,
+        letterSpacing: 1,
     },
     boxMid: {
         width: '100%',
@@ -33,55 +37,49 @@ export const style = StyleSheet.create({
     },
     labelInput: {
         fontSize: 14,
-        color: '#4A5568',
-        marginBottom: 5,
-        marginLeft: 15,
-        fontWeight: '600',
+        color: themes.colors.gray,
+        marginBottom: 8,
+        marginLeft: 4,
+        fontWeight: '500',
     },
     boxInputContainer: {
         width: '100%',
-        height: 50,
-        backgroundColor: '#FFFFFF',
-        borderRadius: 30,
-        paddingHorizontal: 20,
-        marginBottom: 10,
+        height: themes.metrics.inputHeight,
+        backgroundColor: themes.colors.secondary,
+        borderRadius: themes.metrics.borderRadius,
+        paddingHorizontal: 15,
+        marginBottom: 8,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        elevation: 2,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.05,
-        shadowRadius: 3,
+        borderWidth: 1,
+        borderColor: themes.colors.lightGray,
     },
     input: {
         height: '100%',
         width: '85%',
-        color: '#2D3748',
+        color: themes.colors.text,
+        fontSize: 16,
     },
     textError: {
-        color: '#E53E3E',
+        color: themes.colors.red,
         fontSize: 12,
-        marginLeft: 15,
-        marginBottom: 15,
+        marginLeft: 4,
+        marginBottom: 12,
         fontWeight: '500'
     },
     button: {
         width: '100%',
-        height: 55,
-        backgroundColor: '#3182CE',
-        borderRadius: 30,
+        height: themes.metrics.inputHeight,
+        backgroundColor: themes.colors.primary,
+        borderRadius: themes.metrics.borderRadius,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 10,
-        elevation: 4,
-        shadowColor: '#3182CE',
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.3,
-        shadowRadius: 4,
+        marginTop: 15,
+        elevation: 0,
     },
     buttonText: {
-        color: '#FFF',
+        color: themes.colors.white,
         fontSize: 18,
         fontWeight: 'bold',
     },
@@ -92,11 +90,11 @@ export const style = StyleSheet.create({
         justifyContent: 'center',
     },
     footerText: {
-        color: '#718096',
-        fontSize: 14,
+        color: themes.colors.textDark,
+        fontSize: 15,
     },
     footerLink: {
         fontWeight: 'bold',
-        color: '#3182CE',
+        color: themes.colors.primary,
     }
 });

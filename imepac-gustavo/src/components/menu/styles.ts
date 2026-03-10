@@ -1,11 +1,13 @@
+// menu/styles.js
 import { StyleSheet } from "react-native";
+import { themes } from "../../global/themes";
 
 export const style = StyleSheet.create({
     menuContainer: {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: themes.colors.secondary,
         paddingVertical: 15,
         borderBottomWidth: 1,
-        borderBottomColor: "#E2E8F0",
+        borderBottomColor: themes.colors.lightGray,
         width: '100%',
         marginTop: 40,
         elevation: 3,
@@ -18,24 +20,24 @@ export const style = StyleSheet.create({
         marginHorizontal: 10,
         paddingVertical: 8,
         paddingHorizontal: 12,
-        backgroundColor: '#F7FAFC',
-        borderRadius: 8,
+        backgroundColor: themes.colors.lightGray,
+        borderRadius: themes.metrics.borderRadius,
     },
     btnSair: {
         marginHorizontal: 10,
         paddingVertical: 8,
         paddingHorizontal: 12,
-        backgroundColor: '#FED7D7',
-        borderRadius: 8,
+        backgroundColor: themes.colors.red,
+        borderRadius: themes.metrics.borderRadius,
     },
     menuItem: {
         fontSize: 14,
         fontWeight: "bold",
-        color: '#2D3748',
+        color: themes.colors.text,
     },
     menuItemSair: {
         fontSize: 14,
         fontWeight: "bold",
-        color: '#C53030',
+        color: themes.colors.white,
     }
 });

@@ -1,3 +1,4 @@
+// login/styles.js
 import { Dimensions, StyleSheet } from "react-native";
 import { themes } from "../../global/themes";
 
@@ -19,13 +20,15 @@ export const style = StyleSheet.create({
     logo: {
         width: 100,
         height: 100,
-        marginBottom: 20,
+        marginBottom: 15,
+        tintColor: themes.colors.primary,
     },
     title: {
-        fontSize: 28,
+        fontSize: 32,
         fontWeight: 'bold',
         color: themes.colors.text,
         marginTop: 10,
+        letterSpacing: 1,
     },
     boxMid: {
         width: '100%',
@@ -34,49 +37,49 @@ export const style = StyleSheet.create({
     },
     labelInput: {
         fontSize: 14,
-        color: '#4A5568',
+        color: themes.colors.gray,
         marginBottom: 8,
-        marginLeft: 15,
-        fontWeight: '600',
+        marginLeft: 4,
+        fontWeight: '500',
     },
     boxInputContainer: {
         width: '100%',
-        height: 55,
+        height: themes.metrics.inputHeight,
         backgroundColor: themes.colors.secondary,
-        borderRadius: 30,
+        borderRadius: themes.metrics.borderRadius,
         paddingHorizontal: 15,
-        marginBottom: 10,
+        marginBottom: 8,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         borderWidth: 1,
         borderColor: themes.colors.lightGray,
-        elevation: 2,
     },
     input: {
         height: '100%',
         width: '85%',
-        paddingLeft: 10,
+        paddingLeft: 5,
         color: themes.colors.text,
+        fontSize: 16,
     },
     textError: {
-        color: '#E53E3E',
+        color: themes.colors.red,
         fontSize: 12,
-        marginLeft: 15,
-        marginBottom: 15,
+        marginLeft: 4,
+        marginBottom: 12,
         fontWeight: '500'
     },
     button: {
         width: '100%',
-        height: 55,
+        height: themes.metrics.inputHeight,
         backgroundColor: themes.colors.primary,
-        borderRadius: 30,
+        borderRadius: themes.metrics.borderRadius,
         alignItems: 'center',
         justifyContent: 'center',
-        elevation: 4,
+        marginTop: 10,
     },
     buttonText: {
-        color: themes.colors.secondary,
+        color: themes.colors.white,
         fontSize: 18,
         fontWeight: 'bold',
     },
@@ -87,8 +90,8 @@ export const style = StyleSheet.create({
         justifyContent: 'center',
     },
     footerText: {
-        color: '#718096',
-        fontSize: 14,
+        color: themes.colors.textDark,
+        fontSize: 15,
     },
     footerLink: {
         fontWeight: 'bold',

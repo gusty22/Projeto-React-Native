@@ -11,7 +11,7 @@ import PacienteForm from './pacienteForm/index';
 import Agendamento from './agendamento/index';
 import AgendamentoForm from './agendamentoForm/index';
 import Perfil from './perfil/index';
-import Dashboard from './dashboard/index'; // Trocado!
+import Dashboard from './dashboard/index';
 
 export type RootStackParamList = {
     Login: undefined; Cadastro: undefined; Home: undefined; Pacientes: undefined; PacienteForm: { pacienteId?: string }; Agendamento: undefined; AgendamentoForm: { agendamentoId?: string }; Perfil: undefined; Dashboard: undefined;

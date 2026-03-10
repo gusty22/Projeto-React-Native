@@ -88,7 +88,7 @@ export default function Login({ navigation }: Props) {
                                 setErroEmail("");
                             }}
                             placeholder="exemplo@email.com"
-                            placeholderTextColor={themes.colors.lightGray}
+                            placeholderTextColor={themes.colors.gray}
                             keyboardType="email-address"
                             autoCapitalize="none"
                         />
@@ -106,7 +106,7 @@ export default function Login({ navigation }: Props) {
                                 setErroSenha("");
                             }}
                             placeholder="Sua senha segura"
-                            placeholderTextColor={themes.colors.lightGray}
+                            placeholderTextColor={themes.colors.gray}
                             secureTextEntry
                         />
                         <MaterialIcons name="lock" size={20} color={themes.colors.gray} />
